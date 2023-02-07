@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('labor_costs', function (Blueprint $table) {
             $table->id();
-            $table->integer('social_chargers');
+            $table->integer('social_chargers'); 
             $table->unsignedBigInteger('driver_id');
             $table->foreign('driver_id')->references('id')->on('drivers')->onDelete('cascade');
             $table->unsignedBigInteger('automobile_cost_id');

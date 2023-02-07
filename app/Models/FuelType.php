@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class FuelType extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'name',
+    ];
+
+    public function trips(){
+        return $this->belongsTo(Trip::class, 'fuel_type_id', 'id');
+    }
 }

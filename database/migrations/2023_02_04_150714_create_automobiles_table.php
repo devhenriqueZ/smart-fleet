@@ -26,10 +26,10 @@ return new class extends Migration
             $table->integer('motor');
             $table->integer('power');
             $table->text('observations');
-            $table->unsignedBigInteger('automobile_type');
-            $table->foreign('automobile_type')->references('id')->on('automobile_types')->onDelete('cascade');
-            $table->unsignedBigInteger('fuel_type');
-            $table->foreign('fuel_type')->references('id')->on('fuel_types')->onDelete('cascade');
+            $table->unsignedBigInteger('automobile_type_id');
+            $table->foreign('automobile_type_id')->references('id')->on('automobile_types')->onDelete('cascade');
+            $table->unsignedBigInteger('fuel_type_id');
+            $table->foreign('fuel_type_id')->references('id')->on('fuel_types')->onDelete('cascade');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
