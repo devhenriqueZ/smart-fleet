@@ -15,10 +15,10 @@ return new class extends Migration
     {
         Schema::create('docs_insurance_costs', function (Blueprint $table) {
             $table->id();
-            $table->integer('tracking');
-            $table->integer('rcf_insurance');
-            $table->integer('annual_insurance');
-            $table->integer('ipva_depvat_licenc');
+            $table->decimal('tracking', 10, 2);
+            $table->decimal('rcf_insurance', 10, 2);
+            $table->decimal('annual_insurance', 10, 2);
+            $table->decimal('ipva_depvat_licenc', 10, 2);
             $table->unsignedBigInteger('automobile_cost_id');
             $table->foreign('automobile_cost_id')->references('id')->on('automobile_costs')->onDelete('cascade');
             $table->timestamps();

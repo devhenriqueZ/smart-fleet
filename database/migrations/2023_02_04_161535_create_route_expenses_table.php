@@ -15,9 +15,9 @@ return new class extends Migration
     {
         Schema::create('route_expenses', function (Blueprint $table) {
             $table->id();
-            $table->integer('vl_expense');
+            $table->decimal('vl_expense', 10, 2);
             $table->unsignedBigInteger('expense_type_id');
-            $table->foreign('expense_type_id')->references('id')->on('expenses_type')->onDelete('cascade');
+            $table->foreign('expense_type_id')->references('id')->on('expense_types')->onDelete('cascade');
             $table->unsignedBigInteger('route_id');
             $table->foreign('route_id')->references('id')->on('routes')->onDelete('cascade');
             $table->timestamps();

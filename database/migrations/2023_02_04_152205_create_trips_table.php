@@ -19,9 +19,9 @@ return new class extends Migration
             $table->string('trip_code');
             $table->integer('ini_odometer');
             $table->integer('end_odometer');
-            $table->integer('liter_price');
-            $table->integer('total_expense');
-            $table->integer('total_price');
+            $table->decimal('liter_price', 10, 2);
+            $table->decimal('total_expense', 10, 2);
+            $table->decimal('total_price', 10, 2);
             $table->unsignedBigInteger('fuel_type_id');
             $table->foreign('fuel_type_id')->references('id')->on('fuel_types')->onDelete('cascade');
             $table->unsignedBigInteger('automobile_id');

@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('maintenances', function (Blueprint $table) {
             $table->id();
             $table->date('date');
-            $table->integer('maintenance_price');
+            $table->decimal('maintenance_price', 10, 2);
             $table->unsignedBigInteger('service_id');
             $table->foreign('service_id')->references('id')->on('workshop_services')->onDelete('cascade');
             $table->unsignedBigInteger('car_workshop_id');

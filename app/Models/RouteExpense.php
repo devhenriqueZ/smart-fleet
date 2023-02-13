@@ -15,7 +15,7 @@ class RouteExpense extends Model
         'route_id',
     ];
 
-    public function expenses_type()
+    public function expense_types()
     {
         return $this->hasOne(ExpenseType::class, 'expense_type_id','id');
     }

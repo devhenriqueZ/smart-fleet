@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->tinyInteger('type'); // Fixo ou Variavel
-            $table->integer('cost');
+            $table->decimal('cost', 10, 2);
             $table->unsignedBigInteger('automobile_cost_id');
             $table->foreign('automobile_cost_id')->references('id')->on('automobile_costs')->onDelete('cascade');
             $table->timestamps();

@@ -19,12 +19,12 @@ return new class extends Migration
             $table->string('brand');
             $table->string('model');
             $table->string('chassis');
-            $table->string('renavam');
+            $table->integer('renavam');
             $table->integer('yy_manufacture');
             $table->integer('yy_model');
-            $table->integer('color');
-            $table->integer('motor');
-            $table->integer('power');
+            $table->string('color');
+            $table->string('motor');
+            $table->string('power');
             $table->text('observations');
             $table->unsignedBigInteger('automobile_type_id');
             $table->foreign('automobile_type_id')->references('id')->on('automobile_types')->onDelete('cascade');

@@ -23,4 +23,4 @@ class ExpenseType extends Model
     {
         return $this->belongsTo(RouteExpense::class, 'expense_type_id', 'id');
     }
-}
+} 

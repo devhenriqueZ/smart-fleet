@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('cnh');
             $table->char('cnh_category', 4);
             $table->date('expiration_date');
-            $table->integer('salary');
+            $table->decimal('salary', 10, 2);
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();

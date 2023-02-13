@@ -13,9 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('expenses_type', function (Blueprint $table) {
+        Schema::create('expense_types', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name'); 
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('expenses__types');
+        Schema::dropIfExists('expense_types');
     }
 };

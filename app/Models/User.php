@@ -70,7 +70,7 @@ class User extends Authenticatable
         return $this->hasMany(Driver::class, 'user_id','id');
     }
 
-    public function expenses_type(): HasMany
+    public function expense_types(): HasMany
     {
         return $this->hasMany(ExpensesType::class, 'user_id','id');
     }

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->integer('kt_qm_per_liter');
             $table->integer('qt_tires');
-            $table->integer('vl_tire_unit');
+            $table->decimal('vl_tire_unit', 10, 2);
             $table->integer('tire_life');
             $table->unsignedBigInteger('automobile_cost_id');
             $table->foreign('automobile_cost_id')->references('id')->on('automobile_costs')->onDelete('cascade');

@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('automobile_costs', function (Blueprint $table) {
             $table->id();
-            $table->integer('vl_automobile');
+            $table->decimal('vl_automobile', 10, 2);
             $table->integer('estimated_mileage');
             $table->unsignedBigInteger('automobile_id');
             $table->foreign('automobile_id')->references('id')->on('automobiles')->onDelete('cascade');

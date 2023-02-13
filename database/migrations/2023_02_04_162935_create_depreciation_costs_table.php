@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('depreciation_costs', function (Blueprint $table) {
             $table->id();
-            $table->integer('capital_annual_cost');
-            $table->integer('annual_depreciation_rate');
+            $table->integer('capital_annual_cost'); //percentage on the value of the vehicle
+            $table->integer('annual_depreciation_rate'); //percentage on the value of the vehicle
             $table->unsignedBigInteger('automobile_cost_id');
             $table->foreign('automobile_cost_id')->references('id')->on('automobile_costs')->onDelete('cascade');
             $table->timestamps();
