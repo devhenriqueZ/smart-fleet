@@ -3,14 +3,10 @@
 namespace Database\Seeders;
 
 use App\Models\WorkshopService;
-use Database\Factories\Helpers\FactoryHelper;
-use Database\Seeders\Traits\DisableForeignKeys;
-use Database\Seeders\Traits\TruncateTable;
 use Illuminate\Database\Seeder;
 
 class WorkshopServiceSeeder extends Seeder
 {
-    use DisableForeignKeys, TruncateTable;
 
     /**
      * Run the database seeds.
@@ -19,9 +15,30 @@ class WorkshopServiceSeeder extends Seeder
      */
     public function run()
     {
-        $this->disableForeignKeys();
-        $this->truncate('workshop_services');
-        WorkshopService::factory(10)->create();
-        $this->enableForeignKeys();
+        $workshopServices = [
+            ['name' => 'Troca de óleo'],
+            ['name' => 'Revisão'],
+            ['name' => 'Alinhamento'],
+            ['name' => 'Balanceamento'],
+            ['name' => 'Troca de pneus'],
+            ['name' => 'Freios'],
+            ['name' => 'Suspensão'],
+            ['name' => 'Ar-condicionado'],
+            ['name' => 'Injeção eletrônica'],
+            ['name' => 'Transmissão'],
+            ['name' => 'Bateria'],
+            ['name' => 'Embreagem'],
+            ['name' => 'Faróis'],
+            ['name' => 'Ignição'],
+            ['name' => 'Velas'],
+            ['name' => 'Correia dentada'],
+            ['name' => 'Escapamento'],
+            ['name' => 'Amortecedor'],
+            ['name' => 'Câmbio'],
+            ['name' => 'Filtro de ar'],
+            ['name' => 'Outros'],
+        ];
+
+        WorkshopService::insert($workshopServices);
     }
 }

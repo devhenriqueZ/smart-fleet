@@ -3,14 +3,10 @@
 namespace Database\Seeders;
 
 use App\Models\AutomobileType;
-use Database\Factories\Helpers\FactoryHelper;
-use Database\Seeders\Traits\DisableForeignKeys;
-use Database\Seeders\Traits\TruncateTable;
 use Illuminate\Database\Seeder;
 
 class AutomobileTypeSeeder extends Seeder
 {
-    use DisableForeignKeys, TruncateTable;
 
     /**
      * Run the database seeds.
@@ -19,9 +15,29 @@ class AutomobileTypeSeeder extends Seeder
      */
     public function run()
     {
-        $this->disableForeignKeys();
-        $this->truncate('automobile_types');
-        AutomobileType::factory(10)->create();
-        $this->enableForeignKeys();
+
+        $automobileTypes = [
+            ['name' => 'Sedã'],
+            ['name' => 'SUV'],
+            ['name' => 'Caminhão'],
+            ['name' => 'Van'],
+            ['name' => 'Conversível'],
+            ['name' => 'Perua'],
+            ['name' => 'Carro Esportivo'],
+            ['name' => 'Carro Elétrico'],
+            ['name' => 'Pick-up'],
+            ['name' => 'Ônibus'],
+            ['name' => 'Caminhonete'],
+            ['name' => 'Micro-ônibus'],
+            ['name' => 'Trator'],
+            ['name' => 'Caminhão-tanque'],
+            ['name' => 'Motocicleta'],
+            ['name' => 'Reboque'],
+            ['name' => 'Bicicleta'],
+            ['name' => 'Barco'],
+            ['name' => 'Outro']
+        ];
+
+        AutomobileType::insert($automobileTypes);
     }
 }

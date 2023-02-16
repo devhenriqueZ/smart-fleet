@@ -21,8 +21,6 @@ class WorkshopServiceFactory extends Factory
     {
         return [
             'name' => $this->faker->word(),
-            'observations' => $this->faker->text(),
-            'user_id' => FactoryHelper::getRandomModelId(User::class),
         ];
     }
 }

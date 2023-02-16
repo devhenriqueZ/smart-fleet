@@ -16,9 +16,6 @@ return new class extends Migration
         Schema::create('workshop_services', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->text('observations');
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

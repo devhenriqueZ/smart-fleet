@@ -3,15 +3,10 @@
 namespace Database\Seeders;
 
 use App\Models\ExpenseType;
-use Database\Factories\Helpers\FactoryHelper;
-use Database\Seeders\Traits\DisableForeignKeys;
-use Database\Seeders\Traits\TruncateTable;
 use Illuminate\Database\Seeder;
 
 class ExpenseTypeSeeder extends Seeder
 {
-    use DisableForeignKeys, TruncateTable;
-
     /**
      * Run the database seeds.
      *
@@ -19,9 +14,23 @@ class ExpenseTypeSeeder extends Seeder
      */
     public function run()
     {
-        $this->disableForeignKeys();
-        $this->truncate('expense_types');
-        ExpenseType::factory(10)->create();
-        $this->enableForeignKeys();
+
+        $expenses = [
+            ['name' => 'Alimentação'],
+            ['name' => 'Pedágio'],
+            ['name' => 'Multa'],
+            ['name' => 'Ajudante'],
+            ['name' => 'Segurança'],
+            ['name' => 'Acomodação'],
+            ['name' => 'Estacionamento'],
+            ['name' => 'Impostos'],
+            ['name' => 'Lavagem'],
+            ['name' => 'Seguro'],
+            ['name' => 'Telefone'],
+            ['name' => 'Outros'],
+
+        ];
+
+        ExpenseType::insert($expenses);
     }
 }
