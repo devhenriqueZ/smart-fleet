@@ -24,7 +24,7 @@ class CarWorkshopFactory extends Factory
             'phone_number' => $this->faker->cellphoneNumber(),
             'email' => $this->faker->unique()->email(),
             'observations' =>$this->faker->text(),
-            'user_id' => FactoryHelper::getRandomModelId(User::class),
+            'created_by_user_id' => FactoryHelper::getRandomModelId(User::class),
         ];
     }
 }

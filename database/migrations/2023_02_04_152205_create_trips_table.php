@@ -26,8 +26,8 @@ return new class extends Migration
             $table->foreign('fuel_type_id')->references('id')->on('fuel_types')->onDelete('cascade');
             $table->unsignedBigInteger('automobile_id');
             $table->foreign('automobile_id')->references('id')->on('automobiles')->onDelete('cascade');
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->unsignedBigInteger('created_by_user_id');
+            $table->foreign('created_by_user_id')->references('id')->on('users')->onDelete('cascade');
             $table->unsignedBigInteger('route_id');
             $table->foreign('route_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();

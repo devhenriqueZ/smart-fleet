@@ -33,7 +33,7 @@ class TripFactory extends Factory
             'fuel_type_id' => FactoryHelper::getRandomModelId(FuelType::class),
             'automobile_id' => FactoryHelper::getRandomModelId(Automobile::class),
             'route_id' => FactoryHelper::getRandomModelId(Route::class),
-            'user_id' => FactoryHelper::getRandomModelId(User::class),
+            'created_by_user_id' => FactoryHelper::getRandomModelId(User::class),
         ];
     }
 }

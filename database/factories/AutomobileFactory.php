@@ -35,7 +35,7 @@ class AutomobileFactory extends Factory
             'observations' => $this->faker->text(),
             'automobile_type_id' => FactoryHelper::getRandomModelId(AutomobileType::class),
             'fuel_type_id' => FactoryHelper::getRandomModelId(FuelType::class),
-            'user_id' => FactoryHelper::getRandomModelId(User::class),
+            'created_by_user_id' => FactoryHelper::getRandomModelId(User::class),
         ];
     }
 }

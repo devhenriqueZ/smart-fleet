@@ -22,7 +22,7 @@ class RouteFactory extends Factory
         return [
             'name' => $this->faker->sentence(),
             'description' => $this->faker->text(),
-            'user_id' => FactoryHelper::getRandomModelId(User::class),
+            'created_by_user_id' => FactoryHelper::getRandomModelId(User::class),
         ];
     }
 }

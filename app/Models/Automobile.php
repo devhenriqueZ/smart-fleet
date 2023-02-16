@@ -4,10 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Traits\Multitenantable;
 
 class Automobile extends Model
 {
-    use HasFactory;
+    use HasFactory, Multitenantable;
  
     protected $fillable = [
         'license_plate',
@@ -23,7 +24,7 @@ class Automobile extends Model
         'observations',
         'automobile_type_id',
         'fuel_type_id',
-        'user_id'
+        'created_by_user_id'
     ]; 
 
 
@@ -48,7 +49,7 @@ class Automobile extends Model
     
     public function users()
     {
-        return $this->belongsTo(User::class, 'user_id', 'id');
+        return $this->belongsTo(User::class, 'created_by_user_id', 'id');
     }
 
 

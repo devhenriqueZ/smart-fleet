@@ -30,8 +30,8 @@ return new class extends Migration
             $table->foreign('automobile_type_id')->references('id')->on('automobile_types')->onDelete('cascade');
             $table->unsignedBigInteger('fuel_type_id');
             $table->foreign('fuel_type_id')->references('id')->on('fuel_types')->onDelete('cascade');
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->unsignedBigInteger('created_by_user_id');
+            $table->foreign('created_by_user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

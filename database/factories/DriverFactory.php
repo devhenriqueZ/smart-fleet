@@ -28,7 +28,7 @@ class DriverFactory extends Factory
             'cnh_category' => $this->faker->randomElement(['A', 'B', 'AB', 'AC', 'CD']),
             'expiration_date' => $this->faker->date(),
             'salary' => $this->faker->randomFloat(2, 2500, 3400),
-            'user_id' => FactoryHelper::getRandomModelId(User::class),
+            'created_by_user_id' => FactoryHelper::getRandomModelId(User::class),
         ];
     }
 }

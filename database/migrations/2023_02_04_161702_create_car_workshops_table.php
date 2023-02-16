@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('phone_number');
             $table->string('email')->unique();
             $table->text('observations');
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->unsignedBigInteger('created_by_user_id');
+            $table->foreign('created_by_user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }
